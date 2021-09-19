@@ -1,22 +1,3 @@
-// **************************************************
-// **************************************************
-// **************************************************
-// You will need to finish all of the FINISH ME
-// commented statements.  You should also start to
-// understand how to use the following components or 
-// GUI objects:
-// JPanel, JMenuBar, JMenu, JMenuItem
-// JButton, JTextField, JLabel
-// This program also reviews inheritance and
-// interfaces.
-// **************************************************
-// **************************************************
-// **************************************************
-
-
-// FINISH ME
-// replace  xxxxxx xxxxxxxx  with your first and last name
-// My name is Kevin Wang
 
 import java.awt.*;
 import javax.swing.*;
@@ -26,14 +7,6 @@ import java.text.*;
 
 public class Main extends JFrame implements ActionListener,FocusListener
 {
-	// *****************************************************************
-	// *****************************************************************
-	// *****************************************************************
-	// global or instance variables go here  (no commands)
-	// These are also sometimes called fields, attributes, or properties
-	// *****************************************************************
-	// *****************************************************************
-	// *****************************************************************
 	
 	
     // the main panel on the screen
@@ -58,7 +31,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
 	JTextField finalNumField = new JTextField("",8);
 	
 	
-    // buttons
+    // calculator buttons
     JButton calcButton = new JButton("Calculate");
     JButton exitButton = new JButton("Exit");
     JButton clearButton = new JButton("Clear");
@@ -100,7 +73,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
 	JLabel fillerLabel8 = new JLabel("           ");
 	JLabel fillerLabel9 = new JLabel("           ");
 	
-    // create a panel for each BorderLayout position
+    // panels for each BorderLayout position
     JPanel northPanel = new JPanel();
     JPanel southPanel = new JPanel();
     JPanel westPanel = new JPanel();
@@ -113,24 +86,16 @@ public class Main extends JFrame implements ActionListener,FocusListener
 	
 	
 	
-	// constructor to initialize global or instance variables
+	// constructors
 	public Main()
 	{
-		// ****************************
-		// ****************************
-		// ****************************
-		// FINISH ME
-		// Add your first and last name
-		// to replace xxxxxx xxxxxx
-		// ****************************
-		// ****************************
-		// ****************************
-		super("CALCULATOR - Written by Kevin Wang");
+		
+		super("CALCULATOR");
 		setSize(500,450);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 
-		// we will call each button's addActionListener method
+		// addActionListener methods
 		calcMenuItem.addActionListener(this);
 		exitMenuItem.addActionListener(this);
 		calcButton.addActionListener(this);
@@ -160,23 +125,11 @@ public class Main extends JFrame implements ActionListener,FocusListener
 		divideFractionButton.addActionListener(this);
 		negativeButton.addActionListener(this);
 		
-	    // ********************************************************
-	    // ********************************************************
-	    // ********************************************************
-		// FINISH ME
-		// Make sure that all other buttons call their 
-		//     addActionListener method.
-		// Look at your instance variables above to make sure that
-		//    you get them all. 
-	    // ********************************************************
-	    // ********************************************************
-	    // ********************************************************
+	   
+			
 		
 		
-		
-		
-		
-        // this will allow us to see who has the focus
+        // to see who has the focus
         number1Field.addFocusListener(this);
         number2Field.addFocusListener(this);
             
@@ -200,7 +153,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
         
         
 
-        // we will add components to the center panel (i.e. labels, fields, etc.)
+        // we will add components to the center panel
 		centerPanel.add(sevenButton);
 		centerPanel.add(eightButton);
 		centerPanel.add(nineButton);
@@ -241,14 +194,14 @@ public class Main extends JFrame implements ActionListener,FocusListener
 				
 	
 				
-        // **** add menu items to the menus
+        // add menu items to the menus
 		calcMenu.add(calcMenuItem);
 		fileMenu.add(exitMenuItem);
 
-        // **** add the menus to the bar
+        // add the menus to the bar
 		menuBar.add(fileMenu);
         menuBar.add(calcMenu);
-        // **** set the bar to be the menu bar
+        // set the bar to be the menu bar
 		setJMenuBar(menuBar);
 
         
@@ -274,15 +227,12 @@ public class Main extends JFrame implements ActionListener,FocusListener
 	
 
     
-    // ********************************************************
-    // ********************************************************
     // focusGained and focusLost methods
     // These methods get called when a button gains or loses the
     // focus.
     // (provided the addFocusListener method has been called.
     // these methods are in the FocusListener interface 
-    // ********************************************************
-    // ********************************************************
+ 
     public void focusGained(FocusEvent fe)
     {
 		Object source = fe.getSource();
@@ -295,7 +245,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
     // this method is in the FocusListener interface 
     public void focusLost(FocusEvent fe)
     {
-    	// nothing we want to do, but it must be here
+    	// it must be there
     }
   
   
@@ -327,15 +277,12 @@ public class Main extends JFrame implements ActionListener,FocusListener
  
  
     
-    // ********************************************************
-    // ********************************************************
     // public void actionPerformed(ActionEvent e)
     // This method gets called when a button is clicked.
     // (provided the addActionListener method has been called.
     // This method receives information about what object
     //     got clicked
-    // ********************************************************
-    // ********************************************************
+
     
     public void actionPerformed(ActionEvent e)
 	{
@@ -414,20 +361,6 @@ public class Main extends JFrame implements ActionListener,FocusListener
 			addDigit(".");
 		}
 
-		// ****************************************************
-		// ****************************************************
-		// ****************************************************
-		// FINISH ME - add more button checks for the number 
-		//    buttons.
-		// You will need to add more else if statements for all
-		// of the number button clicks.
-		// Look at the variables names in the instance variable
-		//    section at the top of this file.
-
-		
-
-
-
 
 		else if (source == plusButton)
 		{
@@ -462,23 +395,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
 			operatorField.setText("%");
 			whichOperator = '%';
 		}
-		// ****************************************************
-		// ****************************************************
-		// ****************************************************
-		// FINISH ME - add more button checks for the operators
-		// You will need to add more else if statements for all
-		// of the operator button clicks.
-		// Look at the variables names in the instance variable
-		//    section at the top of this file.
-		// multiplyButton '*'
-		// divideButton   '/'
-		// the mod and exponent will get you 5 bonus points
-		// modButton      '%'
-		// exponentButton '^'
-
-
-
-
+		
 
 
 		else if (source == clearButton)
@@ -505,16 +422,12 @@ public class Main extends JFrame implements ActionListener,FocusListener
             whichOperator = tempOperator.charAt(0);
             
             	
-           	// ******************************************
-           	// ******************************************
-           	// ******************************************
+           
            	// This if statement if true means that both
            	// input fields contain a fraction.  
            	// Therefore, our answer will also
            	// show as a fraction in reduced form.
-           	// ******************************************
-           	// ******************************************
-           	// ******************************************
+           
             if (s1.contains("/") && s2.contains("/"))
             {
             	// display the result as a fraction
@@ -538,35 +451,21 @@ public class Main extends JFrame implements ActionListener,FocusListener
             	{
             		result = f1.divide(f2);
             	}
-            	// ******************************************
-            	// ******************************************
-            	// ******************************************
-            	// FINISH ME - add more whichOperation checks
-            	// You will only need to do * and /
-            	// ******************************************
-            	// ******************************************
-            	// ******************************************
-				// NOTE: % means mod, ^ means raise to a power
-				//       but you will NOT do these for fractions
+            	
+            	
+            
 				
-				
-
-
             	
             	
             	finalNumField.setText(result.toString());
             } // end of if (s1.contains("/") && s2.contains("/"))
 
             
-           	// ******************************************
-           	// ******************************************
-           	// ******************************************
+           	
            	// This else section means that the input
            	// fields are not both fractions, so we will
            	// show the result as a decimal number.
-           	// ******************************************
-           	// ******************************************
-           	// ******************************************
+           	
             else
             {
             	// display the result as a decimal
@@ -596,15 +495,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
             	// and store it in y
             	if (s2.contains("/"))
             	{
-            		// *************************************************
-            		// *************************************************
-            		// *************************************************
-            		// FINISH ME
-            		// build a Fraction object and call getDoubleValue()
-            		// see above
-            		// *************************************************
-            		// *************************************************
-            		// *************************************************
+            		
                 Fraction f2 = new Fraction(s1);
             		y = f2.getDoubleValue();
             	}
@@ -644,17 +535,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
 				{
 			  		z = Math.pow(x,y);
 				}
-				// ***************************************************
-				// ***************************************************
-				// ***************************************************
-				// FINISH ME - handle other whichOperator conditionals
-				// Use else if statements
-				// NOTES:
-				// (handle '*', '/', "%" (which is modulus), and '^')
-				// DO NOT USE ^ in your calculation, use Math.pow(x,y)
-				// ***************************************************
-				// ***************************************************
-				// ***************************************************
+				
 
 
 			
@@ -683,14 +564,10 @@ public class Main extends JFrame implements ActionListener,FocusListener
 	
 	
 	
-	// *************************************************************
-	// *************************************************************
-	// *************************************************************	
+	
 	// class Fraction handles numbers in a fraction form
-	// this is an inner class (a class defined within another class)
-	// *************************************************************
-	// *************************************************************
-	// *************************************************************
+	// this is an inner class
+	
 
 	class Fraction
 	{
@@ -699,70 +576,38 @@ public class Main extends JFrame implements ActionListener,FocusListener
 		
 		public Fraction(int numerator, int denominator)
 		{
-			// ***************************************
-			// ***************************************
-			// ***************************************
-			// FINISH ME
-			// assign values to the instance variables
-			// numerator and denominator
-			// ***************************************
-			// ***************************************
-			// ***************************************
+			
 			this.numerator = numerator;
-      this.denominator = denominator;
+     			this.denominator = denominator;
 
 			
 			reduce();
 
-			// ***************************************
-			// ***************************************
-			// ***************************************
-			// FINISH ME
-			// call the reduce method to reduce the
-			//     fraction (i.e. simplify)
-			// ***************************************
-			// ***************************************
-			// ***************************************
+		
 
 
 		}
 		
 		public Fraction(String fraction)
 		{
-			// parse the input  (Example: "4/8")  think Scanner and useDelimeter
+			// parse the input  (Example: "4/8") using Scanner and useDelimeter
 			Scanner scan = new Scanner(fraction);
-			scan.useDelimiter("/"); // the separator will be a / instead of a space
+			scan.useDelimiter("/"); 
 			
-			// ***************************************
-			// ***************************************
-			// ***************************************
-			// FINISH ME
-			// assign values to the instance variables
-			// numerator and denominator
-			// ***************************************
-			// ***************************************
-			// ***************************************
+			
 			numerator = scan.nextInt();
       denominator = scan.nextInt();
 			
 			
 			reduce();
-			// ***************************************
-			// ***************************************
-			// ***************************************
-			// FINISH ME
-			// call the reduce method to reduce the
-			//     fraction (i.e. simplify)
-			// ***************************************
-			// ***************************************
-			// ***************************************
+			
 
 			
 		}
 
 		private void reduce()
 		{
-			// Euclid's algorithm to simply the fraction  (google it!)
+			// Euclid's algorithm to simply the fraction
 			
 			int x = numerator;
 			int y = denominator;
@@ -785,7 +630,7 @@ public class Main extends JFrame implements ActionListener,FocusListener
 		
 		public Fraction add(Fraction other)
 		{
-			// do not modify this Fraction!!!!!!
+			
 			// add this Fraction and the other Fraction
 			// create a new Fraction object and return it
 			int a = numerator;
@@ -800,10 +645,8 @@ public class Main extends JFrame implements ActionListener,FocusListener
 			
 			int newNum = a*d + b*c;
 			
-			// *********
-			// FINISH ME
-			// *********			
-			int newDen = b*d; // CHANGE ME (LOOK ABOVE) 
+						
+			int newDen = b*d; 
 			
 			
 			return new Fraction(newNum,newDen);	
@@ -811,16 +654,10 @@ public class Main extends JFrame implements ActionListener,FocusListener
 
 		public Fraction subtract(Fraction other)
 		{
-			// *********************************************
-			// *********************************************
-			// *********************************************
-			// FINISH ME
-			// do not modify this Fraction
+			
 			// subtract this Fraction and the other Fraction
 			// create a new Fraction object and return it
-			// *********************************************
-			// *********************************************
-			// *********************************************
+			
 			int a = numerator;
 			int b = denominator;
 			int c = other.numerator;
@@ -832,19 +669,11 @@ public class Main extends JFrame implements ActionListener,FocusListener
 
 
 
-			return new Fraction(newNum,newDen);  // CHANGE ME (LOOK ABOVE)	
+			return new Fraction(newNum,newDen);  	
 		}
 
 
-		// ***********************************		
-		// ***********************************		
-		// ***********************************		
-		// FINISH ME
-		// add methods to multiply, and divide
-		// Mod and Exponent button is extra credit
-		// ***********************************		
-		// ***********************************		
-		// ***********************************		
+				
 
     public Fraction multiply(Fraction other)
     {
@@ -884,40 +713,29 @@ public class Main extends JFrame implements ActionListener,FocusListener
 		
 		public double getDoubleValue()
 		{
-			// FINISH ME
-			// return the value of numerator/denominator as a double (use a type cast)
-			return (double)numerator/denominator; // change this line
+			
+			// return the value of numerator/denominator as a double (using a type cast)
+			return (double)numerator/denominator; 
 		}
 		
 		public String toString()
 		{
 			if (denominator == 1)
 			{
-				// *********
-				// *********
-				// *********
-				// FINISH ME
-				// *********
-				// *********
-				// *********
+			
 				return ""+numerator;  
-        // change me!!! (think about what you should return) (Example:  5/1, return 5)
+       
 			}
 			
 			
-			// *********
-			// *********
-			// *********
-			// FINISH ME
+			
 			// return in fractional form
 			// Example:  numerator 5, denominator 7   return 5/7
 			// So join together the numerator plus "/" plus denominator
 			// Use the + operator
-			// *********
-			// *********
-			// *********
+			
 			return numerator + "/" + denominator; 
-      // change me!!!
+ 
 		}
 
 
